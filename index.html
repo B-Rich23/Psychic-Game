@@ -3,31 +3,46 @@
 
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Pyschic Game</title>
-		<link rel="stylesheet" type="text/css" href="">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
-	<body>
-		<h1>The Psychic Game</h1>
-		<!-- Guess what letter I'm thinking of -->
-		<p><h2>Guess what letter I'm thinking of!</h2></p>
 
-		<!-- Wins: (# of times the user has guessed the letter correctly) -->
-		<p><h2>Wins: <span id="wins"></span> </h2></p>
+  <body>
 
-		<!-- Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses) -->
-		<p><h2>Losses: <span id="losses"></span></h2></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="jumbotron">
+            <h1>The Psychic Game</h1>
+            <br>
+            <br>
+			<!-- Guess what letter I'm thinking of -->
+			<p><h2>Instructions: Guess what letter I'm thinking of!</h2></p>
 
-		<!-- Guesses Left: (# of guesses left. This will update) -->
-		<p><h2>Guesses Left: <span id="guessleft"></span></h2></p>
+			<!-- Wins: (# of times the user has guessed the letter correctly) -->
+			<p><h2>Wins: <span id="wins"></span> </h2></p>
 
-		<!-- Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.) -->
-		<p><h2>Your Guesses So Far: <span id="misses"></span></h2></p>
+			<!-- Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses) -->
+			<p><h2>Losses: <span id="losses"></span></h2></p>
 
-		<!-- When the player wins, increase the Wins counter and start the game over again (without refreshing the page). -->
+			<!-- Guesses Left: (# of guesses left. This will update) -->
+			<p><h2>Guesses Left: <span id="guessleft"></span></h2></p>
+
+			<!-- Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.) -->
+			<p><h2>Your Guesses So Far: <span id="misses"></span></h2></p>
+
+			<!-- When the player wins, increase the Wins counter and start the game over again (without refreshing the page). -->
+			
+
+			<!-- When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
+
+          </div>
+        </div>
+      </div>
+    </div>
 		
-
-		<!-- When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
-
 		<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 	</body>
