@@ -54,13 +54,8 @@ var reset = function() {
 		} 
 		// else if (guessleft === 0) {
 
-			else {
+			else if (guessesLeft > 0){
 			
-			lossesCounter++;
-			console.log("You have " + lossesCounter + " losses!");
-			result = document.getElementById("losses");
-			result.textContent = lossesCounter;
-
 			guessesLeft--;
 			console.log("You have " + guessesLeft + " guesses left!");
 			result = document.getElementById("guessleft");
@@ -70,6 +65,18 @@ var reset = function() {
 			guessedAlready.push(userGuess);
 			result = document.getElementById("misses");
 			result.textContent = guessedAlready.join(", ");	
+
+		}
+
+			else if (guessesLeft === 0) {
+
+			lossesCounter++;
+			console.log("You have " + lossesCounter + " losses!");
+			result = document.getElementById("losses");
+			result.textContent = lossesCounter;
+			reset();
+
+			
 		}
 	}
 		
