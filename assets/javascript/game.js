@@ -44,8 +44,8 @@ function startGame() {
 		winsCounter++;
 		console.log("You have " + winsCounter + " wins!");
 			result = document.getElementById("wins");
-			result.textContent = winsCounter;}
-		} else if (userGuess !== computerChoice && guessesLeft <=8) {
+			result.textContent = winsCounter;
+		} else if (userGuess !== computerChoice && guessesLeft <0) {
 			
 			lossesCounter++;
 			console.log("You have " + lossesCounter + " losses!");
@@ -61,7 +61,7 @@ function startGame() {
 		}
 			
 		}
-	}
+
 
 // function to increase number of displayed wins when user guesses correctly
 // function winsCounter();
