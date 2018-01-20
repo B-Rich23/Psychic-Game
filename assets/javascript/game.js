@@ -5,41 +5,61 @@ console.log(secretLetter)
 // Variable for random computer choice of letters
 // var computerChoice;
 
+var computerChoice;
+
 var winsCounter = 0;
 
 var lossesCounter = 0;
 
 var guessesLeft = 9;
 
+var guessedAlready = []
+
 
 // Undefined variable for user's guess
-var userGuess ; 
+var userGuess; 
 
 // Undefined variable for result of user's guess
 var result;
 
 // Event handler that documents what letter user selects when key is released
 
-// function startGame () {
+document.getElementById("button").onclick = function() {startGame()}
+
+function startGame() {
+
+
+		computerChoice = secretLetter[Math.floor(Math.random() * secretLetter.length)];
+		console.log(computerChoice);
+
 		document.onkeyup = function(event) {
 
-		var userGuess = event.key;
+		
+		userGuess = event.key;
 		console.log(userGuess);
 
-		var computerChoice = secretLetter[Math.floor(Math.random() * secretLetter.length)];
-		console.log(computerChoice);
+		
 
 		if (userGuess == computerChoice && winsCounter <=9) {
 		winsCounter++;
 		console.log("You have " + winsCounter + " wins!");
-		var result = document.getElementById("wins");
-			result.textContent = winsCounter;
-		} else if (userGuess !== computerChoice && lossesCounter <=9) {
+			result = document.getElementById("wins");
+			result.textContent = winsCounter;}
+		} else if (userGuess !== computerChoice && guessesLeft <=8) {
+			
 			lossesCounter++;
 			console.log("You have " + lossesCounter + " losses!");
-	
-			guessesLeft--;
-			console.log("You have " + guessesLeft + " guesses left!")
+			result = document.getElementById("losses");
+			result.textContent = lossesCounter;}
+
+			// guessesLeft--;
+			// console.log("You have " + guessesLeft + " guesses left!");
+			// result = document.getElementById("guessleft");
+			// result.textContent = guessesLeft;
+
+			
+		}
+			
 		}
 	}
 
