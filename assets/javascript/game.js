@@ -2,11 +2,11 @@
 // Variable array of alphabet characters
 var secretLetter = ["a", "b", "c", "d", "e", "f","g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 console.log(secretLetter)
-// Variable for random computer choice of letters
-// var computerChoice;
 
+// Undefined variable for computer choice of letters
 var computerChoice;
 
+// Variables for counters
 var winsCounter = 0;
 
 var lossesCounter = 0;
@@ -22,28 +22,23 @@ var userGuess;
 // Undefined variable for result of user's guess
 var result;
 
+// Variable to reset incorrect answer accumulators
 var reset = function() {
 				guessesLeft = 9;
 				guessedAlready = [];}
 
-// Event handler that documents what letter user selects when key is released
-
-// document.getElementById("button").onclick = function() {startGame()}
-
-// function startGame() {
-
-
-		
-
+// Event handler that initiates game
 		document.onkeyup = function(event) {
 
+		// Variable for random computer choice of letters
 		computerChoice = secretLetter[Math.floor(Math.random() * secretLetter.length)];
 		console.log(computerChoice);
 
+		// userGuess variable given value of released key
 		userGuess = event.key;
 		console.log(userGuess);
 
-
+		// Conditional statement to increase the winsCounter variable, update the counter in the html, and reset non-wins counters with each win
 		if (userGuess == computerChoice && winsCounter <=9) {
 		winsCounter++;
 		console.log("You have " + winsCounter + " wins!");
@@ -52,8 +47,7 @@ var reset = function() {
 			reset();
 			
 		} 
-		// else if (guessleft === 0) {
-
+			// Conditional statement to decrease the guessesLeft variable and update the counter in the html
 			else if (guessesLeft > 0){
 			
 			guessesLeft--;
@@ -61,6 +55,7 @@ var reset = function() {
 			result = document.getElementById("guessleft");
 			result.textContent = guessesLeft;
 
+			// Conditional statement to fill the variable array guessedAlready with incorrect guesses and display the array in the html
 			console.log(userGuess);
 			guessedAlready.push(userGuess);
 			result = document.getElementById("misses");
@@ -70,6 +65,7 @@ var reset = function() {
 
 			else if (guessesLeft === 0) {
 
+			// Conditional statement to increase the lossesCounter variable, update the counter in the html, and reset the non-wins counters
 			lossesCounter++;
 			console.log("You have " + lossesCounter + " losses!");
 			result = document.getElementById("losses");
@@ -82,58 +78,4 @@ var reset = function() {
 		
 		
 
-
-// function to increase number of displayed wins when user guesses correctly
-// function winsCounter();
-
-// function to increase number of displayed lossses when user guesses incorrectly
-// var lossesCounter = function lossesCounter()
-
-// function to decrease number of displayed guesses user has left when user guesses incorrectly
-// var guessesLeft = function guessesLeft ()
-
-// function to display each letter that user guesses incorrectly
-// var guessedAlready = function guessedAlready()
-
-
-
-
-// Conditional if user guesses correctly
-// if (userGuess == computerChoice) {
-	// winsCounter++;
-	// var userText = document.getElementById("wins");
-	// document.onkeyup = function(event) {
-		// console.log("You win!");
-	// } 
-// else {
-// 		var userText = document.getElementById("losses");
-// 	document.onkeyup = function(event) {
-// 		console.log(loss++);
-// 	}
-// }
-// for loop to continue game
-
-// event handler to display and increase wins by 1 
-
-// } else {
-// event handler to display and increase losses by 1 
-
-// event handler to display and decrease guesses by 1
-
-// event handler to display each letter that user guesses incorrectly
-
-// for loop to continue game
-// 	}
-// };
-
-
-
-
-// };
-
-
-
-// while(userGuess !== secretLetter) {
-	
-// }
 
