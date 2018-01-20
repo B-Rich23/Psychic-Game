@@ -25,14 +25,18 @@ var result;
 // Variable to reset incorrect answer accumulators
 var reset = function() {
 				guessesLeft = 9;
-				guessedAlready = [];}
+				guessedAlready = [];
+				// Variable for random computer choice of letters
+				computerChoice = secretLetter[Math.floor(Math.random() * secretLetter.length)];
+				console.log("Computer chose this: " + computerChoice);
+}
+
+				// Variable for random computer choice of letters
+		computerChoice = secretLetter[Math.floor(Math.random() * secretLetter.length)];
+		console.log("Computer chose this: " + computerChoice);
 
 // Event handler that initiates game
-		document.onkeyup = function(event) {
-
-		// Variable for random computer choice of letters
-		computerChoice = secretLetter[Math.floor(Math.random() * secretLetter.length)];
-		console.log(computerChoice);
+	document.onkeyup = function(event) {
 
 		// userGuess variable given value of released key
 		userGuess = event.key;
