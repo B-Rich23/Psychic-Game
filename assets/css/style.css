@@ -1,3 +1,23 @@
 body {
-	
+	background-image: url(professor-x_super.jpg); 
+}
+
+.container {
+	background color: #FFC300;
+}
+
+.row {
+	background color: #FFC300;
+}
+
+.col-md-offset-2 {
+	background color: #FFC300;
+}
+
+.col-md-8 {
+	background color: #FFC300;
+}
+
+.jumbotron {
+	background color: #deab38;
 }
