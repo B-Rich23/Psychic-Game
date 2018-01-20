@@ -22,45 +22,58 @@ var userGuess;
 // Undefined variable for result of user's guess
 var result;
 
+var reset = function() {
+				guessesLeft = 9;
+				guessedAlready = [];}
+
 // Event handler that documents what letter user selects when key is released
 
-document.getElementById("button").onclick = function() {startGame()}
+// document.getElementById("button").onclick = function() {startGame()}
 
-function startGame() {
+// function startGame() {
 
+
+		
+
+		document.onkeyup = function(event) {
 
 		computerChoice = secretLetter[Math.floor(Math.random() * secretLetter.length)];
 		console.log(computerChoice);
 
-		document.onkeyup = function(event) {
-
-		
 		userGuess = event.key;
 		console.log(userGuess);
 
-		
 
 		if (userGuess == computerChoice && winsCounter <=9) {
 		winsCounter++;
 		console.log("You have " + winsCounter + " wins!");
 			result = document.getElementById("wins");
 			result.textContent = winsCounter;
-		} else if (userGuess !== computerChoice && guessesLeft <0) {
+			reset();
+			
+		} 
+		// else if (guessleft === 0) {
+
+			else {
 			
 			lossesCounter++;
 			console.log("You have " + lossesCounter + " losses!");
 			result = document.getElementById("losses");
-			result.textContent = lossesCounter;}
+			result.textContent = lossesCounter;
 
-			// guessesLeft--;
-			// console.log("You have " + guessesLeft + " guesses left!");
-			// result = document.getElementById("guessleft");
-			// result.textContent = guessesLeft;
+			guessesLeft--;
+			console.log("You have " + guessesLeft + " guesses left!");
+			result = document.getElementById("guessleft");
+			result.textContent = guessesLeft;
 
-			
+			console.log(userGuess);
+			guessedAlready.push(userGuess);
+			result = document.getElementById("misses");
+			result.textContent = guessedAlready.join(", ");	
 		}
-			
-		}
+	}
+		
+		
 
 
 // function to increase number of displayed wins when user guesses correctly
